@@ -57,15 +57,19 @@ window.onload = () => {
   // Agrega un listener de click a los spans impares de div10 (1, 3, 5)
 document.querySelectorAll('#div10 .a-span:nth-of-type(odd)').forEach((span, posicion) => span.addEventListener('click',() =>{
   console.log('impares' + posicion);
-  }))
+  }));
   
-  
-
-   
 
   // Agrega otro span a div11, con 'not-a-span' como clase y 'Not a span!' como contenido
+  /*let nSpan = document.createElement('span');
+  nSpan.innerText='Not a span!';
+  nSpan.className='not-a-span';
+  document.querySelector('#div11').appendChild('nSpan');*/
+  
   // Cambia el src de la imagen de div12 a dogge.jpg (adjunto)
   // Pon 'THE-span' como id del span de div13
+  
+
   /**
    * Agrega listeners a los 3 inputs de div14.
    * change para changeInput
@@ -79,9 +83,16 @@ document.querySelectorAll('#div10 .a-span:nth-of-type(odd)').forEach((span, posi
    * cambie el texto a 'I am being hovered'.
    * Debe volver al texto original cuando el mouse deje de estar encima.
    */
+  let nSpan = document.querySelector('#div15 .a-span')
+  nSpan.addEventListener('mouseover', (event) => { nSpan.innerText = 'I am being hovered' });
+  nSpan.addEventListener('mouseout', (event) => { nSpan.innerText = 'I am not being hovered' });
+  
   /**
    * Agrega un listener de scroll a la div16.
    * Debe imprimir algo ('I was scrolled') cada vez que se hace scroll de ella.
    * Se recomienda NO usar alert para este ejercicio.
    */
+  document.querySelector('#div16').addEventListener('scroll', () => {
+    console.log('I was scrolled');
+  } )
 };
